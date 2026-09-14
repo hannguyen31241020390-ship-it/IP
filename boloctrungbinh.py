@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Đọc ảnh
-image = cv2.imread("C:/Users/Windows/Downloads/Fig0333(a)(test_pattern_blurring_orig).png")
+image = cv2.imread("C:/Users/Windows/Downloads/Fig0334(a)(hubble-original).png")
 
 # Chuyển BGR sang RGB để matplotlib hiển thị đúng màu
 image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
