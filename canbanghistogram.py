@@ -27,7 +27,19 @@ def HistogramEqualization(image):
             r= image[i][j]
             img_eq[i][j] = hr_eq[r]*255
     return img_eq
+
+global_histeq_img= HistogramEqualization(image)
+a=3
+b=a//2
+W, H= image.shape
+local_histeq_img= image.copy()
+for i in range(b, W-b):
+    for j in range(b, H-b):
+        w= image[i-b:i+b+1, j-b:j+b+1]
+        w_eq= HistogramEqualization(w)
+        local_histeq_img[i][j]= w_eq[b][b]
 cv2.imshow("Original Image", image)
-cv2.imshow("Histogram Equalization", HistogramEqualization(image))
+cv2.imshow("Global Histogram Equalization", global_histeq_img)
+cv2.imshow("Local Histogram Equalization", local_histeq_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
