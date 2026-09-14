@@ -6,8 +6,6 @@ import matplotlib.pyplot as plt
 path = "C:/Users/Windows/Downloads/Fig0338(a)(blurry_moon).png"
 img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
 
-if img is None:
-    raise FileNotFoundError(f"Không tìm thấy ảnh tại đường dẫn: {path}")
 
 # --- 1. TOÁN TỬ SOBEL ---
 sobel_x = cv2.Sobel(img, cv2.CV_64F, 1, 0, ksize=3)
